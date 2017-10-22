@@ -1,0 +1,35 @@
+<header class="masthead" style="background-image: url('../../assets/images/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Tech Blog</h1>
+                    <span class="subheading">Newsfeed App</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row form-wrapper">
+        <form ngForm name="form" class="text-muted clearfix page-form" id="create-form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="title"><b>Write a title</b></label>
+                <input type="text" class="form-control" id="title" placeholder="Title" name="title" #titleInput [(ngModel)]="article.title">
+            </div>
+            <div class="form-group">
+                <label for="category"><b>Choose a category</b></label>
+                <input type="text" class="form-control" id="category" placeholder="Category" name="category" #categoryInput [(ngModel)]="article.category">
+            </div>
+            <div class="form-group">
+                <label for="image"><b>Set image URL</b></label>
+                <input type="text" class="form-control" id="image" placeholder="Image URL" name="image" #imageInput [(ngModel)]="article.image">
+            </div>
+            <div class="form-group">
+                <label for="content"><b>Write your article</b></label>
+                <textarea class="form-control" rows="5" id="content" name="content" #contentInput [(ngModel)]="article.content"></textarea>
+            </div>
+            <button type="submit" id="btn-create-post" class="btn btn-default pull-right">Submit</button>
+        </form>
+    </div>
+</div>

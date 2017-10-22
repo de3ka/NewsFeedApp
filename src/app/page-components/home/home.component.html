@@ -1,0 +1,43 @@
+<header class="masthead" style="background-image: url('../../assets/images/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Tech Blog</h1>
+                    <span class="subheading">Newsfeed App</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div *ngFor="let article of articles" class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-preview">
+                <a *ngIf="isLoggedIn; else elseBlock" [routerLink]="['/articles', article.title]">
+
+                    <h2 class="post-title">
+                        {{article.title}}
+                    </h2>
+                    <h3 class="post-subtitle">
+                        ARTICLE CATEGORY: {{article.category}}
+                    </h3>
+                </a>
+                <ng-template #elseBlock>
+                    <a [routerLink]="['/article', article.title]">
+                        <h2 class="post-title">
+                            {{article.title}}
+                        </h2>
+                        <h3 class="post-subtitle">
+                            ARTICLE CATEGORY: {{article.category}}
+                        </h3>
+                    </a>
+                </ng-template>
+                <p class="post-meta">Posted by
+                    <a href="#">{{article.postedBy}}</a></p>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>

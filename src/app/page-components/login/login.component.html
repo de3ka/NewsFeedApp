@@ -1,0 +1,30 @@
+<header class="masthead" style="background-image: url('../../assets/images/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Tech Blog</h1>
+                    <span class="subheading">Newsfeed App</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row form-wrapper">
+        <form name="form" id="login-form" class="clearfix col-md-6 col-md-push-3 page-form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                <label for="username"><b>Username</b></label>
+                <input type="text" id="username" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+                <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+            </div>
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+                <label for="password"><b>Password</b></label>
+                <input type="password" id="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+                <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+            </div>
+            <button id="btn-login" type="submit" class="btn btn-default pull-right">Login</button>
+            <a [routerLink]="['/register']" class="btn btn-default pull-right">Register</a>
+        </form>
+    </div>
+</div>

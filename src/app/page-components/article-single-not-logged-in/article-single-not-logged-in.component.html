@@ -1,0 +1,24 @@
+<header class="masthead" [ngStyle]="{ 'background-image': 'url(' + article.image + ')'}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-heading">
+                    <h1>{{article.title}}</h1>
+                    <h2 class="subheading">ARTICLE CATEGORY: {{article.category}}</h2>
+                    <span class="meta">Posted by
+                <a href="#">{{article.postedBy}}</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <p style="text-align: justify">{{article.content}}</p>
+            </div>
+        </div>
+    </div>
+</article>
